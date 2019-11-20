@@ -1,0 +1,6 @@
+#Makefile
+
+install:
+	composer install
+
+

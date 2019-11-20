@@ -2,7 +2,7 @@
     "name": "vm/1st-hexlet-project",
     "description": "first project in Hexlet",
     "type": "project",
-    "license": "gnu",
+    "license": "proprietary",
     "authors": [
         {
             "name": "VitaMinkin",
