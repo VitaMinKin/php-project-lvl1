@@ -6,5 +6,7 @@
   <img src="https://api.codeclimate.com/v1/badges/ed90828dec2c01738abf/maintainability" />
 </a>
 
-{<img src="https://travis-ci.org/VitaMinKin/php-project-lvl1.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/VitaMinKin/php-project-lvl1]
+<a href="https://travis-ci.org/VitaMinKin/php-project-lvl1">
+  <img src="https://travis-ci.org/VitaMinKin/php-project-lvl1.svg?branch=master" alt="Build Status" />
+</a>
 
