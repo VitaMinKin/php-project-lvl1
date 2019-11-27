@@ -2,14 +2,15 @@
     "name": "vm/1st-hexlet-project",
     "description": "first project in Hexlet",
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "VitaMinkin",
             "email": "inetmanager2009@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "bin": [
             "bin/brain-games",
             "bin/brain-even"

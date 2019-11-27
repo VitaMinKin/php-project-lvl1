@@ -15,7 +15,7 @@ And he needs to answer yes if the number is even, or no if it is odd.
   <img src="https://travis-ci.org/VitaMinKin/php-project-lvl1.svg?branch=master" alt="Build Status" />
 </a>
 
-`My first project in <a href="https://ru.hexlet.io/u/vitaminkin" >Hexlet!</a>`
+This is My first project in <a href="https://ru.hexlet.io/u/vitaminkin" >Hexlet!</a>
 
 ## Installation
 
