@@ -10,7 +10,6 @@
             "email": "inetmanager2009@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "bin": [
             "bin/brain-games",
             "bin/brain-even"
