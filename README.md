@@ -20,6 +20,9 @@ This is My first project in <a href="https://ru.hexlet.io/u/vitaminkin" >Hexlet!
 ## Installation
 
 You need use Composer, you can install brain-even system-wide with the following command:
-        `composer global require "vm/1st-hexlet-project"`
+        `composer global require "vm/1st-hexlet-project:dev-master"`
+
+<a href="https://asciinema.org/a/jxzbjVi4y13QuMOGzSSps9dXK">project installation asciinema</a>
+
 
 
