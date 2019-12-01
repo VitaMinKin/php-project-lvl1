@@ -11,13 +11,16 @@
     ],
     "bin": [
             "bin/brain-games",
-            "bin/brain-even"
+            "bin/brain-even",
+            "bin/brain-calc"
     ],
     "prefer-stable": true,
     "autoload": {
     	"files": [
         "src/Cli.php",
-        "src/numbers.php"
+        "src/games.php",
+        "src/games/numbers.php",
+        "src/games/calc.php"
 	]
     },
     "require": {
