@@ -3,33 +3,22 @@
 namespace BrainGames\games\numbers;
 
 use function BrainGames\games\start;
-use function cli\prompt;
-use function cli\line;
+use function BrainGames\games\bodyGame;
 
-function run()
+function run() //Выводит приветствие, спрашивает имя пользователя и возвращает его
 {
-    getNum(start('brainEven'));
+    //start() получает название игры, возвращает имя пользователя,
+    //generateGame() получает количество необходимых вопросов, генерирует вопросы, возвращает ассоциативный массив типа вопрос = ответ
+    $explanat = "Answer \"yes\" if the number is even, otherwise answer \"no\" \n";
+    bodyGame(start($explanat), generateGame(3)); //3 = количство вопросов, можно задать любое количество
 }
 
-function getNum($userName, $iterate = 0) //userNamme - имя пользователя, iterate - итерация запуска функции
+function generateGame($countQuest)
 {
-    $countQuest = 3; //количество задаваемых вопросов
-    $rnd = rand(0, 999); //Получаем случайное чило,
-    line("Question: %s", $rnd); //Выводим его на экран
-    $answer = prompt("Your answer"); //Запрашиваем ответ
-   
-    $realAns = ($rnd % 2 === 1) ? "no" : "yes"; //получаем правильный ответ
-
-    if ($realAns === $answer) {//сравниваем полученный ответ, если он верный
-        $iterate++; //количество итераций функции увеличиваем на 1
-        if ($iterate < $countQuest) {//Количество итераций меньше заданного количества? Играем дальше!
-            line("Correct!");
-            getNum($userName, $iterate);
-        } else { //останавливаем игру
-            line("Congratulations, %s!", $userName);
-        }
-    } else { //ответ неверен! Выводим ошибку
-        line("'%s' is wrong answer! ;(. Correct answer was '%s'", $answer, $realAns);
-        line("Let's, try again, %s!", $userName);
+    for ($i = 1; $i <= $countQuest; $i++) {
+        $rnd = rand(0, 999); //Получаем случайное чило,
+        $realAns = ($rnd % 2 === 1) ? "no" : "yes"; //получаем правильный ответ
+        $gameTask[$rnd] = $realAns;
     }
+    return $gameTask;
 }
