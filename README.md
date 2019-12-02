@@ -19,10 +19,14 @@ This is My first project in <a href="https://ru.hexlet.io/u/vitaminkin" >Hexlet!
 
 ## Installation
 
-You need use Composer, you can install brain-even system-wide with the following command:
+You need use Composer, you can install brain-games system-wide with the following command:
         `composer global require "vm/1st-hexlet-project:dev-master"`
 
 <a href="https://asciinema.org/a/jxzbjVi4y13QuMOGzSSps9dXK">project installation asciinema</a>
 
+To start the even / odd game, use the brain-even command:
+<a href="https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ">run brain-even game</a>
 
+To start the game "Calculator" use the brain-calc command:
+<a href=" https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ">run brain-calc game</a>
 
