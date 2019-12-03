@@ -3,9 +3,7 @@
 ## About
 This project helps me learn php and gain experience in developing web applications! ;) 
 
-The application is a game!
-The essence of the game is as follows: a random number is shown to the user. 
-And he needs to answer yes if the number is even, or no if it is odd.
+The application is a console game!
 
 <a href="https://codeclimate.com/github/VitaMinKin/php-project-lvl1/maintainability">
   <img src="https://api.codeclimate.com/v1/badges/ed90828dec2c01738abf/maintainability" />
@@ -22,11 +20,13 @@ This is My first project in <a href="https://ru.hexlet.io/u/vitaminkin" >Hexlet!
 You need use Composer, you can install brain-games system-wide with the following command:
         `composer global require "vm/1st-hexlet-project:dev-master"`
 
-<a href="https://asciinema.org/a/jxzbjVi4y13QuMOGzSSps9dXK">project installation asciinema</a>
+[project installation asciinema](https://asciinema.org/a/jxzbjVi4y13QuMOGzSSps9dXK)
 
 To start the even / odd game, use the brain-even command:
-<a href="https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ">run brain-even game</a>
+[run brain-even game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
 
 To start the game "Calculator" use the brain-calc command:
-<a href=" https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ">run brain-calc game</a>
+[run brain-calc game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
 
+To starts the game "Largest common factor" use the brain-gcd command:
+![run brain-calc game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
