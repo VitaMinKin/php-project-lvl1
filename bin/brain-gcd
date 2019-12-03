@@ -1,6 +1,10 @@
 #! /usr/bin/env php
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+if (file_exists (__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php';
+} else { 
+    require __DIR__ . '/../../../../vendor/autoload.php'; //4 уровня вверх выяснил опытным путем
+}
 
 use function BrainGames\games\gcd\run;
 

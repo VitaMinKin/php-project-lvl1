@@ -29,4 +29,4 @@ To start the game "Calculator" use the brain-calc command:
 [run brain-calc game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
 
 To starts the game "Largest common factor" use the brain-gcd command:
-![run brain-calc game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
+[run brain-calc game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
