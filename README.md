@@ -1,19 +1,17 @@
 # php-project-lvl1
+[![codeclimate_bage](https://api.codeclimate.com/v1/badges/ed90828dec2c01738abf/maintainability)](https://codeclimate.com/github/VitaMinKin/php-project-lvl1/maintainability)
+
+[![travis-ci_bage](https://travis-ci.org/VitaMinKin/php-project-lvl1.svg?branch=master)](https://travis-ci.org/VitaMinKin/php-project-lvl1)
 
 ## About
-This project helps me learn php and gain experience in developing web applications! ;) 
+The application is a set of console games of 5 pieces
+1) "even / odd" game;
+2) "Calculator" game;
+3) "Largest common factor" game;
+4) "Progression" game;
+5) "Prime" game;
 
-The application is a console game!
-
-<a href="https://codeclimate.com/github/VitaMinKin/php-project-lvl1/maintainability">
-  <img src="https://api.codeclimate.com/v1/badges/ed90828dec2c01738abf/maintainability" />
-</a>
-
-<a href="https://travis-ci.org/VitaMinKin/php-project-lvl1">
-  <img src="https://travis-ci.org/VitaMinKin/php-project-lvl1.svg?branch=master" alt="Build Status" />
-</a>
-
-This is My first project in <a href="https://ru.hexlet.io/u/vitaminkin" >Hexlet!</a>
+This is My first project in [Hexlet!](https://ru.hexlet.io/u/vitaminkin)
 
 ## Installation
 
