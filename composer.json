@@ -13,7 +13,8 @@
             "bin/brain-games",
             "bin/brain-even",
             "bin/brain-calc",
-            "bin/brain-gcd"
+            "bin/brain-gcd",
+            "bin/brain-progression"
     ],
     "prefer-stable": true,
     "autoload": {
@@ -22,7 +23,8 @@
         "src/games.php",
         "src/games/numbers.php",
         "src/games/calc.php",
-        "src/games/gcd.php"
+        "src/games/gcd.php",
+        "src/progression.php"
 	]
     },
     "require": {

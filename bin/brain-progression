@@ -1,0 +1,16 @@
+#! /usr/bin/env php
+<?php
+
+/*костыль! Не понимаю как решить по другому,
+    но когда выполняем деплой, папка vendor оказывается гораздо выше вызывающего ее кода,
+    отсюда ругань PHP на отсутствие файла autoload.php...
+*/
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php';
+} else {
+    require __DIR__ . '/../../../../vendor/autoload.php'; //4 уровня вверх выяснил опытным путем
+}
+
+use function BrainGames\games\progression\run;
+
+run();
