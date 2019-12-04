@@ -24,7 +24,7 @@
         "src/games/numbers.php",
         "src/games/calc.php",
         "src/games/gcd.php",
-        "src/progression.php"
+        "src/games/progression.php"
 	]
     },
     "require": {
