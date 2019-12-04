@@ -1,6 +1,6 @@
 {
     "name": "vm/1st-hexlet-project",
-    "description": "first project in Hexlet",
+    "description": "console brain games",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -38,5 +38,13 @@
     "scripts": {
 	    "phpcs": "phpcs"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "keywords": [
+        "hexlet",
+        "first",
+        "project",
+        "games",
+        "console",
+        "brain"
+    ]
 }
