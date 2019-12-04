@@ -18,18 +18,21 @@ This is My first project in <a href="https://ru.hexlet.io/u/vitaminkin" >Hexlet!
 ## Installation
 
 You need use Composer, you can install brain-games system-wide with the following command:
-        `composer global require "vm/1st-hexlet-project:dev-master"`
+        `composer global require "vm/1st-hexlet-project"`
 
-[project installation asciinema](https://asciinema.org/a/jxzbjVi4y13QuMOGzSSps9dXK)
+[![asciicast](https://asciinema.org/a/Ukhny8vFZO2p1UDvF0eeR10De.svg)](https://asciinema.org/a/Ukhny8vFZO2p1UDvF0eeR10De)
 
 To start the even / odd game, use the brain-even command:
-[run brain-even game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
+[![asciicast](https://asciinema.org/a/PSuYOpBke9h8iBKn6ufITt9uO.svg)](https://asciinema.org/a/PSuYOpBke9h8iBKn6ufITt9uO)
 
 To start the game "Calculator" use the brain-calc command:
-[run brain-calc game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
+[![asciicast](https://asciinema.org/a/QswtfBJ29L0XoXDIVACYud5tB.svg)](https://asciinema.org/a/QswtfBJ29L0XoXDIVACYud5tB)
 
 To starts the game "Largest common factor" use the brain-gcd command:
-[run brain-calc game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
+[![asciicast](https://asciinema.org/a/BYNIu8VBYDyn9dyDAAk7XkBiL.svg)](https://asciinema.org/a/BYNIu8VBYDyn9dyDAAk7XkBiL)
 
-To starts the game "Progression" use the brain-gcd command:
-[run brain-progression game](https://asciinema.org/a/QGcZOFQhJAevFxGadeadiOqNJ)
+To starts the game "Progression" use the brain-progression command:
+[![asciicast](https://asciinema.org/a/lrSqGV4kwDFWA4ZYdhs3qmipI.svg)](https://asciinema.org/a/lrSqGV4kwDFWA4ZYdhs3qmipI)
+
+To start the game "Prime" use the brain-prime command:
+[![asciicast](https://asciinema.org/a/wGfZbCGURG1Ogkmbf6S0KSiZF.svg)](https://asciinema.org/a/wGfZbCGURG1Ogkmbf6S0KSiZF)
