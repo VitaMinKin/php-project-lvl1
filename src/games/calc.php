@@ -35,7 +35,7 @@ function generateGame($countQuest)
                 break;
         }
         //запишем в массив вопрос/ответ
-        $gameTask["{$firstNum} $operate {$secondNum} \n"] = $res;
+        $gameTask["{$firstNum} $operate {$secondNum}"] = $res;
     }
     return $gameTask;
 }
