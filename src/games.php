@@ -2,14 +2,18 @@
 
 namespace BrainGames\games;
 
-use function BrainGames\cli\run;
 use function cli\line;
 use function cli\prompt;
 
-function start($game)
+function start($gameTitle)
 {
-    $userName = run($game); //функция в cli.php, выводит приветствие, возвращает имя, которое ввел пользователь
-    return ($userName); //Возвращаем имя пользователя
+    line('Welcome to the Brain Games!');
+    if ($gameTitle != '') {
+        line("{$gameTitle} \n");
+    }
+    $name = prompt('May i have your name?');
+    line("Hello, %s! \n", $name);
+    return $name;
 }
 
 function bodyGame($userName, $task = []) //userNamme - имя пользователя, iterate - итерация запуска функции

@@ -1,14 +1,12 @@
 #! /usr/bin/env php
 <?php
 
-/*костыль! Не понимаю как решить по другому,
-    но когда выполняем деплой, папка vendor оказывается гораздо выше вызывающего ее кода,
-    отсюда ругань PHP на отсутствие файла autoload.php...
-*/
-if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
-    require __DIR__ . '/../vendor/autoload.php';
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
 } else {
-    require __DIR__ . '/../../../../vendor/autoload.php'; //4 уровня вверх выяснил опытным путем
+    require_once $autoloadPath2;
 }
 
 use function BrainGames\games\progression\run;

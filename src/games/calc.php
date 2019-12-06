@@ -5,37 +5,45 @@ namespace BrainGames\games\calc;
 use function BrainGames\games\start;
 use function BrainGames\games\bodyGame;
 
-function run() //Выводит приветствие, спрашивает имя пользователя и возвращает его
+define('GAME_TITLE', 'What is the result of the expression?');
+
+function run()
 {
-    //start() получает название игры, возвращает имя пользователя,
-    //generateGame() получает количество необходимых вопросов,
-    //генерирует вопросы, возвращает ассоциативный массив типа вопрос = ответ
-    $explanat = "What is the result of the expression? \n";
-    bodyGame(start($explanat), generateGame(3)); //3 = количство вопросов, можно задать любое количество
+    bodyGame(start(GAME_TITLE), generateGame());
+}
+
+function getSolution($firstNum, $secondNum, $action)
+{
+    switch ($action) {
+        case '+':
+            $solution = $firstNum + $secondNum;
+            break;
+        case '-':
+            $solution = $firstNum - $secondNum;
+            break;
+        case '*':
+            $solution = $firstNum * $secondNum;
+            break;
+    }
+    return $solution;
 }
 
 //Получим задание на игру!
-function generateGame($countQuest)
+function generateGame()
 {
-    $operArr = ['+', '-', '*']; //Возможные операции
-    for ($i = 1; $i <= $countQuest; $i++) { //сформируем вопрос/ответ для каждой итерации игры!
-        $firstNum = rand(0, 99); //Генерируем первое число
-        $secondNum = rand(0, 9); //Генерируем второе число
-        $operate = $operArr[rand(0, 2)]; //Случайный выбор операции
-        //Вычислим правильный ответ
-        switch ($operate) {
-            case '+':
-                $res = $firstNum + $secondNum;
-                break;
-            case '-':
-                $res = $firstNum - $secondNum;
-                break;
-            case '*':
-                $res = $firstNum * $secondNum;
-                break;
-        }
-        //запишем в массив вопрос/ответ
-        $gameTask["{$firstNum} $operate {$secondNum}"] = $res;
+    $countQuest = 3;
+    $arithmeticOperator = ['+', '-', '*'];
+    for ($i = 1; $i <= $countQuest; $i++) {
+        $firstNum = rand(0, 99);
+        $secondNum = rand(0, 9);
+        $randomOperate = rand(0, 2);
+
+        $action = $arithmeticOperator[$randomOperate];
+
+        $solution = getSolution($firstNum, $secondNum, $action);
+        
+        $task = "$firstNum $action $secondNum";
+        $gameTasks[$task] = $solution;
     }
-    return $gameTask;
+    return $gameTasks;
 }
