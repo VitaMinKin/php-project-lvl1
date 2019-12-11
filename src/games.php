@@ -5,6 +5,8 @@ namespace BrainGames\games;
 use function cli\line;
 use function cli\prompt;
 
+define("COUNT_QUESTIONS", 3);
+
 function start($gameTitle)
 {
     line('Welcome to the Brain Games!');
@@ -16,16 +18,16 @@ function start($gameTitle)
     return $name;
 }
 
-function bodyGame($userName, $task = []) //userNamme - имя пользователя, iterate - итерация запуска функции
+function startGame($userName, $tasks = [])
 {
-    foreach ($task as $key => $val) {
-        //массив $task содержит "вопрос" => "ответ";
-        line("Question: %s", $key); //Выводим вопрос на экран
-        $answer = prompt("Your answer"); //Запрашиваем ответ от пользователя
-        if ($val == $answer) {//сравниваем полученный ответ, если он верный, продолжаем игру до конца массива
+    foreach ($tasks as $question => $correctAnswer) {
+        line("Question: %s", $question);
+        $userAnswer = prompt("Your answer");
+
+        if ($correctAnswer == $userAnswer) {
                 line("Correct!");
-        } else { //ответ неверен! Выводим ошибку и останавливаем игру
-            line("'%s' is wrong answer! ;(. Correct answer was '%s'", $answer, $val);
+        } else {
+            line("'%s' is wrong answer! ;(. Correct answer was '%s'", $userAnswer, $correctAnswer);
             line("Let's, try again, %s!", $userName);
             exit();
         }

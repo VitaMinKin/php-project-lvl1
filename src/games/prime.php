@@ -3,34 +3,38 @@
 namespace BrainGames\games\prime;
 
 use function BrainGames\games\start;
-use function BrainGames\games\bodyGame;
+use function BrainGames\games\startGame;
+
+const GAME_TITLE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 function run()
 {
-    $explanat = "Answer \"yes\" if given number is prime. Otherwise answer \"no\". \n";
-    bodyGame(start($explanat), generateGame(3)); //3 = количство вопросов
+    $userName = start(GAME_TITLE);
+    $listOfIssues = getQuestions();
+    startGame($userName, $listOfIssues);
 }
 
-function generateGame($countQuest)
+function getQuestions()
 {
-    for ($i = 1; $i <= $countQuest; $i++) {
-        $a = rand(0, 99);
-        $gameTask[$a] = prime($a);
+    for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
+        $number = rand(0, 99);
+        $answer = (isPrime($number)) ? 'yes' : 'no';
+        $questions[$number] = $answer;
     }
-    return $gameTask;
+    return $questions;
 }
 
-function prime($a)
+function isPrime($testNumber)
 {
-    if ($a % 2 == 0) {
-        return "no";
+    if ($testNumber % 2 == 0) {
+        return false;
     }
 
     $d = 3; //Для перебора только нечетных чисел
 
-    while (($d * $d <= $a) and ($a % $d != 0)) {
+    while (($d * $d <= $testNumber) and ($testNumber % $d != 0)) {
         $d += 2;
     }
            
-    return  (($d * $d) > $a) ? "yes" : "no";
+    return  (($d * $d) > $testNumber);
 }

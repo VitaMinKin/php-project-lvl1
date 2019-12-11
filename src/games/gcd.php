@@ -3,44 +3,36 @@
 namespace BrainGames\games\gcd;
 
 use function BrainGames\games\start;
-use function BrainGames\games\bodyGame;
+use function BrainGames\games\startGame;
 
-function run() //Выводит приветствие, спрашивает имя пользователя и возвращает его
+const GAME_TITLE = 'Find the greatest common divisor of given numbers.';
+
+function run()
 {
-    /*
-     bodyGame($userName, $task)- движок игры, реализована в games.php
-        $userName - имя пользователя
-        $task - задание на игру в виде ассоциативного массива
-     start($WhatsGame):string - реализует начало игры, возвращает имя пользователя (games.php)
-        $WhatsGame - название игры, выводимое после запуска
-     generateGame($countQuest):array - генерирует вопросы, возвращает ассоциативный массив типа вопрос = ответ
-        $countQuest - количество необходимых вопросов,
-    */
-    $explanat = "Find the greatest common divisor of given numbers. \n";
-    bodyGame(start($explanat), generateGame(3)); //3 = количство вопросов
+    $userName = start(GAME_TITLE);
+    $listOfIssues = getQuestions();
+    startGame($userName, $listOfIssues);
 }
 
-function generateGame($countQuest)
+function getQuestions()
 {
-    for ($i = 1; $i <= $countQuest; $i++) {
-         //Получаем первое случайное чило
+    for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
         do {    //Для усложнения задачи, выбираем только четные числа!
             $firstNum = rand(0, 99);
         } while ($firstNum % 2 === 1);
 
-        //Получаем второе случайное чило
         do {
             $secondNum = rand(0, 99);
         } while ($secondNum % 2 === 1);
 
-        $realAns = nod($firstNum, $secondNum);
-        $gameTask["{$firstNum} {$secondNum}"] = $realAns;
+        $greatestCommonFactor = getNod($firstNum, $secondNum);
+        $questions["$firstNum $secondNum"] = $greatestCommonFactor;
     }
-    return $gameTask;
+    return $questions;
 }
 
 //Бинарный алгоритм вычисления НОД
-function nod($a, $b)
+function getNod($a, $b)
 {
     $k = 1;
     while (($a != 0) && ($b != 0)) {

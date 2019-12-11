@@ -20,7 +20,7 @@
     "autoload": {
     	"files": [
         "src/games.php",
-        "src/games/numbers.php",
+        "src/games/even.php",
         "src/games/calc.php",
         "src/games/gcd.php",
         "src/games/progression.php",
