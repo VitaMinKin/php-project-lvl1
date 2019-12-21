@@ -2,19 +2,19 @@
 
 namespace BrainGames\games\prime;
 
-use function BrainGames\games\start;
 use function BrainGames\games\startGame;
+
+use const BrainGames\games\COUNT_QUESTIONS;
 
 const GAME_TITLE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 function run()
 {
-    $userName = start(GAME_TITLE);
-    $listOfIssues = getQuestions();
-    startGame($userName, $listOfIssues);
+    $questionsList = createTaskGame();
+    startGame(GAME_TITLE, $questionsList);
 }
 
-function getQuestions()
+function createTaskGame()
 {
     for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
         $number = rand(0, 99);
@@ -26,7 +26,7 @@ function getQuestions()
 
 function isPrime($testNumber)
 {
-    if ($testNumber % 2 == 0) {
+    if (($testNumber % 2 == 0) || ($testNumber < 2)) {
         return false;
     }
 

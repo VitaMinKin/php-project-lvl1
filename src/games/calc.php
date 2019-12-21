@@ -2,19 +2,20 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\games\start;
 use function BrainGames\games\startGame;
 
+use const BrainGames\games\COUNT_QUESTIONS;
+
 const GAME_TITLE = 'What is the result of the expression?';
+const OPERATIONS = ['+', '-', '*'];
 
 function run()
 {
-    $userName = start(GAME_TITLE);
-    $questionsList = getQuestions();
-    startGame($userName, $questionsList);
+    $questionsList = createTaskGame();
+    startGame(GAME_TITLE, $questionsList);
 }
 
-function getCorrectAnswer($firstNum, $secondNum, $action)
+function calculateAnswer($firstNum, $secondNum, $action)
 {
     switch ($action) {
         case '+':
@@ -30,20 +31,19 @@ function getCorrectAnswer($firstNum, $secondNum, $action)
     return $solution;
 }
 
-function getQuestions()
+function createTaskGame()
 {
-    $arithmeticOperator = ['+', '-', '*'];
     for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
-        $firstNum = rand(0, 99);
-        $secondNum = rand(0, 9);
-        $randomOperate = rand(0, 2);
+        $randomOperate = rand(0, count(OPERATIONS) - 1);
+        $operation = OPERATIONS[$randomOperate];
 
-        $action = $arithmeticOperator[$randomOperate];
-
-        $solution = getCorrectAnswer($firstNum, $secondNum, $action);
+        $a = rand(0, 99);
+        $b = rand(0, 9);
         
-        $question = "$firstNum $action $secondNum";
-        $questions[$question] = $solution;
+        $answer = calculateAnswer($a, $b, $operation);
+        
+        $question = "$a $operation $b";
+        $questions[$question] = $answer;
     }
     return $questions;
 }

@@ -2,37 +2,41 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\games\start;
 use function BrainGames\games\startGame;
+
+use const BrainGames\games\COUNT_QUESTIONS;
 
 const GAME_TITLE = 'Find the greatest common divisor of given numbers.';
 
 function run()
 {
-    $userName = start(GAME_TITLE);
-    $listOfIssues = getQuestions();
-    startGame($userName, $listOfIssues);
+    $questionsList = createTaskGame();
+    startGame(GAME_TITLE, $questionsList);
 }
 
-function getQuestions()
+function chooseEvenNumbers()
+{
+    //Для усложнения задачи, функция возвращает только четные числа!
+    do {
+        $a = rand(0, 99);
+    } while ($a % 2 === 1);
+    return $a;
+}
+
+function createTaskGame()
 {
     for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
-        do {    //Для усложнения задачи, выбираем только четные числа!
-            $firstNum = rand(0, 99);
-        } while ($firstNum % 2 === 1);
-
-        do {
-            $secondNum = rand(0, 99);
-        } while ($secondNum % 2 === 1);
-
-        $greatestCommonFactor = getNod($firstNum, $secondNum);
-        $questions["$firstNum $secondNum"] = $greatestCommonFactor;
+        $a = chooseEvenNumbers();
+        $b = chooseEvenNumbers();
+        
+        $answer = getGreatestCommonFactor($a, $b);
+        $questions["$a $b"] = $answer;
     }
     return $questions;
 }
 
 //Бинарный алгоритм вычисления НОД
-function getNod($a, $b)
+function getGreatestCommonFactor($a, $b)
 {
     $k = 1;
     while (($a != 0) && ($b != 0)) {

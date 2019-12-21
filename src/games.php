@@ -5,9 +5,9 @@ namespace BrainGames\games;
 use function cli\line;
 use function cli\prompt;
 
-define("COUNT_QUESTIONS", 3);
+const COUNT_QUESTIONS = 3;
 
-function start($gameTitle)
+function welcomesUser($gameTitle)
 {
     line('Welcome to the Brain Games!');
     if ($gameTitle != '') {
@@ -18,8 +18,9 @@ function start($gameTitle)
     return $name;
 }
 
-function startGame($userName, $tasks = [])
+function startGame($gameTitle, $tasks = [])
 {
+    $userName = welcomesUser($gameTitle);
     foreach ($tasks as $question => $correctAnswer) {
         line("Question: %s", $question);
         $userAnswer = prompt("Your answer");
