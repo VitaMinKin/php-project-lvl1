@@ -7,12 +7,17 @@ use function cli\prompt;
 
 const COUNT_QUESTIONS = 3;
 
-function welcomesUser($gameTitle)
+function welcome($gameTitle)
 {
     line('Welcome to the Brain Games!');
     if ($gameTitle != '') {
         line("{$gameTitle} \n");
     }
+    return true;
+}
+
+function askUserName()
+{
     $name = prompt('May i have your name?');
     line("Hello, %s! \n", $name);
     return $name;
@@ -20,13 +25,15 @@ function welcomesUser($gameTitle)
 
 function startGame($gameTitle, $tasks = [])
 {
-    $userName = welcomesUser($gameTitle);
+    welcome($gameTitle);
+    $userName = askUserName();
+
     foreach ($tasks as $question => $correctAnswer) {
         line("Question: %s", $question);
         $userAnswer = prompt("Your answer");
 
         if ($correctAnswer == $userAnswer) {
-                line("Correct!");
+            line("Correct!");
         } else {
             line("'%s' is wrong answer! ;(. Correct answer was '%s'", $userAnswer, $correctAnswer);
             line("Let's, try again, %s!", $userName);

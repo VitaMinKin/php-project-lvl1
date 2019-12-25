@@ -19,13 +19,13 @@
     "prefer-stable": true,
     "autoload": {
     	"files": [
-        "src/games.php",
-        "src/games/even.php",
-        "src/games/calc.php",
-        "src/games/gcd.php",
-        "src/games/progression.php",
-        "src/games/prime.php"
-	]
+            "src/games.php",
+            "src/games/even.php",
+            "src/games/calc.php",
+            "src/games/gcd.php",
+            "src/games/progression.php",
+            "src/games/prime.php"
+	    ]
     },
     "require": {
         "wp-cli/php-cli-tools": "@dev"

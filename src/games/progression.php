@@ -22,7 +22,7 @@ function createTaskGame()
         $difference = rand(2, 9);
         $progression = getProgression($beginNumber, $difference);
 
-        $randomElement = rand(0, count($progression));
+        $randomElement = rand(0, count($progression)-1);
         $answer = $progression[$randomElement];
         $progression[$randomElement] = '..';
 

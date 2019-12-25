@@ -17,16 +17,16 @@ function run()
 function createTaskGame()
 {
     for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
-        $number = rand(0, 99);
-        $answer = (isPrime($number)) ? 'yes' : 'no';
-        $questions[$number] = $answer;
+        $a = rand(0, 99);
+        $answer = (isPrime($a)) ? 'yes' : 'no';
+        $questions[$a] = $answer;
     }
     return $questions;
 }
 
 function isPrime($testNumber)
 {
-    if (($testNumber % 2 == 0) || ($testNumber < 2)) {
+    if (($testNumber != 2) && (($testNumber % 2 == 0) || ($testNumber < 2))) {
         return false;
     }
 
