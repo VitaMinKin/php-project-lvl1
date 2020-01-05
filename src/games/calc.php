@@ -2,20 +2,20 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\games\startGame;
+use function BrainGames\games\playGame;
 
-use const BrainGames\games\COUNT_QUESTIONS;
+use const BrainGames\games\QUESTIONS_COUNT;
 
 const GAME_TITLE = 'What is the result of the expression?';
 const OPERATIONS = ['+', '-', '*'];
 
 function run()
 {
-    $questionsList = createTaskGame();
-    startGame(GAME_TITLE, $questionsList);
+    $tasksList = createTaskGame();
+    playGame(GAME_TITLE, $tasksList);
 }
 
-function calculateAnswer($firstNum, $secondNum, $action)
+function calculateExpression($firstNum, $secondNum, $action)
 {
     switch ($action) {
         case '+':
@@ -33,17 +33,17 @@ function calculateAnswer($firstNum, $secondNum, $action)
 
 function createTaskGame()
 {
-    for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
+    for ($i = 1; $i <= QUESTIONS_COUNT; $i++) {
         $randomOperate = rand(0, count(OPERATIONS) - 1);
         $operation = OPERATIONS[$randomOperate];
 
         $a = rand(0, 99);
         $b = rand(0, 9);
         
-        $answer = calculateAnswer($a, $b, $operation);
+        $answer = calculateExpression($a, $b, $operation);
         
         $question = "$a $operation $b";
-        $questions[$question] = $answer;
+        $tasks[$question] = $answer;
     }
-    return $questions;
+    return $tasks;
 }
