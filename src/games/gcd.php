@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\games\startGame;
+use function BrainGames\games\playGame;
 
 use const BrainGames\games\COUNT_QUESTIONS;
 
@@ -10,11 +10,11 @@ const GAME_TITLE = 'Find the greatest common divisor of given numbers.';
 
 function run()
 {
-    $questionsList = createTaskGame();
-    startGame(GAME_TITLE, $questionsList);
+    $tasksList = createTaskGame();
+    playGame(GAME_TITLE, $tasksList);
 }
 
-function chooseEvenNumbers()
+function chooseEvenNumber()
 {
     //Для усложнения задачи, функция возвращает только четные числа!
     do {
@@ -23,41 +23,19 @@ function chooseEvenNumbers()
     return $a;
 }
 
+function gcd($a, $b)
+{
+    return ($a % $b) ? gcd($b, $a % $b) : abs($b);
+}
+
 function createTaskGame()
 {
     for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
-        $a = chooseEvenNumbers();
-        $b = chooseEvenNumbers();
+        $a = chooseEvenNumber();
+        $b = chooseEvenNumber();
         
-        $answer = getGreatestCommonFactor($a, $b);
-        $questions["$a $b"] = $answer;
+        $answer = gcd($a, $b);
+        $tasks["$a $b"] = $answer;
     }
-    return $questions;
-}
-
-//Бинарный алгоритм вычисления НОД
-function getGreatestCommonFactor($a, $b)
-{
-    $k = 1;
-    while (($a != 0) && ($b != 0)) {
-        while (($a % 2 === 0) && ($b % 2 === 0)) {
-            $a /= 2;
-            $b /= 2;
-            $k *= 2;
-        }
-        while ($a % 2 === 0) {
-            $a /= 2;
-        }
-            
-        while ($b % 2 === 0) {
-            $b /= 2;
-        }
-
-        if ($a >= $b) {
-            $a -= $b;
-        } else {
-            $b -= $a;
-        }
-    }
-    return $b * $k;
+    return $tasks;
 }

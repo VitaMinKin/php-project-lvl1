@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\progression;
 
-use function BrainGames\games\startGame;
+use function BrainGames\games\playGame;
 
 use const BrainGames\games\COUNT_QUESTIONS;
 
@@ -11,8 +11,8 @@ const PROGRESSION_ELEMENTS = 10;
 
 function run()
 {
-    $questionsList = createTaskGame();
-    startGame(GAME_TITLE, $questionsList);
+    $tasksList = createTaskGame();
+    playGame(GAME_TITLE, $tasksList);
 }
 
 function createTaskGame()
@@ -22,14 +22,14 @@ function createTaskGame()
         $difference = rand(2, 9);
         $progression = getProgression($beginNumber, $difference);
 
-        $randomElement = rand(0, count($progression)-1);
+        $randomElement = rand(0, count($progression) - 1);
         $answer = $progression[$randomElement];
         $progression[$randomElement] = '..';
 
         $question = implode(" ", $progression);
-        $questions[$question] = $answer;
+        $tasks[$question] = $answer;
     }
-    return $questions;
+    return $tasks;
 }
 
 function getProgression($beginNumber, $difference)

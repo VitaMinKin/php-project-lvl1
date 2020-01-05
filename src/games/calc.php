@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\games\startGame;
+use function BrainGames\games\playGame;
 
 use const BrainGames\games\COUNT_QUESTIONS;
 
@@ -11,8 +11,8 @@ const OPERATIONS = ['+', '-', '*'];
 
 function run()
 {
-    $questionsList = createTaskGame();
-    startGame(GAME_TITLE, $questionsList);
+    $tasksList = createTaskGame();
+    playGame(GAME_TITLE, $tasksList);
 }
 
 function calculateAnswer($firstNum, $secondNum, $action)
@@ -43,7 +43,7 @@ function createTaskGame()
         $answer = calculateAnswer($a, $b, $operation);
         
         $question = "$a $operation $b";
-        $questions[$question] = $answer;
+        $tasks[$question] = $answer;
     }
-    return $questions;
+    return $tasks;
 }

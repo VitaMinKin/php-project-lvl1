@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\prime;
 
-use function BrainGames\games\startGame;
+use function BrainGames\games\playGame;
 
 use const BrainGames\games\COUNT_QUESTIONS;
 
@@ -10,31 +10,31 @@ const GAME_TITLE = "Answer 'yes' if given number is prime. Otherwise answer 'no'
 
 function run()
 {
-    $questionsList = createTaskGame();
-    startGame(GAME_TITLE, $questionsList);
+    $tasksList = createTaskGame();
+    playGame(GAME_TITLE, $tasksList);
 }
 
 function createTaskGame()
 {
     for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
-        $a = rand(0, 99);
-        $answer = (isPrime($a)) ? 'yes' : 'no';
-        $questions[$a] = $answer;
+        $question = rand(0, 99);
+        $answer = (isPrime($question)) ? 'yes' : 'no';
+        $tasks[$question] = $answer;
     }
-    return $questions;
+    return $tasks;
 }
 
-function isPrime($testNumber)
+function isPrime($number)
 {
-    if (($testNumber != 2) && (($testNumber % 2 == 0) || ($testNumber < 2))) {
+    if (($number != 2) && (($number % 2 == 0) || ($number < 2))) {
         return false;
     }
 
     $d = 3; //Для перебора только нечетных чисел
 
-    while (($d * $d <= $testNumber) and ($testNumber % $d != 0)) {
+    while (($d * $d <= $number) and ($number % $d != 0)) {
         $d += 2;
     }
            
-    return  (($d * $d) > $testNumber);
+    return  ($d * $d) > $number;
 }

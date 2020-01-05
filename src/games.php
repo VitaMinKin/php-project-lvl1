@@ -23,7 +23,7 @@ function askUserName()
     return $name;
 }
 
-function startGame($gameTitle, $tasks = [])
+function playGame($gameTitle, $tasks = [])
 {
     welcome($gameTitle);
     $userName = askUserName();
