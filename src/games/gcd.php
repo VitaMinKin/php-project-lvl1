@@ -4,7 +4,7 @@ namespace BrainGames\games\gcd;
 
 use function BrainGames\games\playGame;
 
-use const BrainGames\games\COUNT_QUESTIONS;
+use const BrainGames\games\QUESTIONS_COUNT;
 
 const GAME_TITLE = 'Find the greatest common divisor of given numbers.';
 
@@ -30,7 +30,7 @@ function gcd($a, $b)
 
 function createTaskGame()
 {
-    for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
+    for ($i = 1; $i <= QUESTIONS_COUNT; $i++) {
         $a = chooseEvenNumber();
         $b = chooseEvenNumber();
         

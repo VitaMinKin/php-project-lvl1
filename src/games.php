@@ -5,7 +5,7 @@ namespace BrainGames\games;
 use function cli\line;
 use function cli\prompt;
 
-const COUNT_QUESTIONS = 3;
+const QUESTIONS_COUNT = 3;
 
 function welcome($gameTitle)
 {

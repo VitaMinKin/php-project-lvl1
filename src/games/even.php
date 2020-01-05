@@ -4,7 +4,7 @@ namespace BrainGames\games\even;
 
 use function BrainGames\games\playGame;
 
-use const BrainGames\games\COUNT_QUESTIONS;
+use const BrainGames\games\QUESTIONS_COUNT;
 
 const GAME_TITLE = "Answer 'yes' if the number is even, otherwise answer 'no'";
 
@@ -16,7 +16,7 @@ function run()
 
 function createTaskGame()
 {
-    for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
+    for ($i = 1; $i <= QUESTIONS_COUNT; $i++) {
         $question = rand(0, 99);
         $answer = (isEven($question)) ? "yes" : "no";
         $tasks[$question] = $answer;

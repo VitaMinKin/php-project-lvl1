@@ -4,10 +4,10 @@ namespace BrainGames\games\progression;
 
 use function BrainGames\games\playGame;
 
-use const BrainGames\games\COUNT_QUESTIONS;
+use const BrainGames\games\QUESTIONS_COUNT;
 
 const GAME_TITLE = "What number is missing in the progression?";
-const PROGRESSION_ELEMENTS = 10;
+const PROGRESSION_LENGTH = 10;
 
 function run()
 {
@@ -17,14 +17,14 @@ function run()
 
 function createTaskGame()
 {
-    for ($i = 1; $i <= COUNT_QUESTIONS; $i++) {
+    for ($i = 1; $i <= QUESTIONS_COUNT; $i++) {
         $beginNumber = rand(0, 99);
         $difference = rand(2, 9);
-        $progression = getProgression($beginNumber, $difference);
+        $progression = getProgression($beginNumber, $difference, PROGRESSION_LENGTH);
 
-        $randomElement = rand(0, count($progression) - 1);
-        $answer = $progression[$randomElement];
-        $progression[$randomElement] = '..';
+        $hiddenElement = rand(0, count($progression) - 1);
+        $answer = $progression[$hiddenElement];
+        $progression[$hiddenElement] = '..';
 
         $question = implode(" ", $progression);
         $tasks[$question] = $answer;
@@ -32,11 +32,10 @@ function createTaskGame()
     return $tasks;
 }
 
-function getProgression($beginNumber, $difference)
+function getProgression($start, $diff, $length)
 {
-    $progres = [$beginNumber];
-    for ($i = 1; $i <= PROGRESSION_ELEMENTS - 1; $i++) {
-        $progres[] = $progres[$i - 1] + $difference;
+    for ($i = 0, $length -= 1; $i <= $length; $i++) {
+        $progression[] = $start + $diff * $i;
     }
-    return $progres;
+    return $progression;
 }
