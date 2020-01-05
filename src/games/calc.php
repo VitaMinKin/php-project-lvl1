@@ -15,7 +15,7 @@ function run()
     playGame(GAME_TITLE, $tasksList);
 }
 
-function calculateAnswer($firstNum, $secondNum, $action)
+function calculateExpression($firstNum, $secondNum, $action)
 {
     switch ($action) {
         case '+':
@@ -40,7 +40,7 @@ function createTaskGame()
         $a = rand(0, 99);
         $b = rand(0, 9);
         
-        $answer = calculateAnswer($a, $b, $operation);
+        $answer = calculateExpression($a, $b, $operation);
         
         $question = "$a $operation $b";
         $tasks[$question] = $answer;

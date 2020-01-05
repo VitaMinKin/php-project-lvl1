@@ -26,7 +26,7 @@ function createTaskGame()
 
 function isPrime($number)
 {
-    if (($number != 2) && (($number % 2 == 0) || ($number < 2))) {
+    if (isNotSuitableNumber($number)) {
         return false;
     }
 
@@ -37,4 +37,9 @@ function isPrime($number)
     }
            
     return  ($d * $d) > $number;
+}
+
+function isNotSuitableNumber($number)
+{
+    return ($number != 2) && (($number % 2 == 0) || ($number < 2));
 }
