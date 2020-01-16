@@ -16,7 +16,6 @@
             "bin/brain-progression",
             "bin/brain-prime"
     ],
-    "prefer-stable": true,
     "autoload": {
     	"files": [
             "src/games.php",
