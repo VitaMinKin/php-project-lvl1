@@ -24,7 +24,7 @@
             "src/games/gcd.php",
             "src/games/progression.php",
             "src/games/prime.php"
-	    ]
+	]
     },
     "require": {
         "wp-cli/php-cli-tools": "@dev"
@@ -33,7 +33,7 @@
         "squizlabs/php_codesniffer": "^3.0@dev"
     },
     "scripts": {
-	    "phpcs": "phpcs"
+	"phpcs": "phpcs"
     },
     "keywords": [
         "hexlet",
