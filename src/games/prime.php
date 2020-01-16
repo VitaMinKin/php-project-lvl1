@@ -26,20 +26,16 @@ function createTaskGame()
 
 function isPrime($number)
 {
-    if (isNotSuitableNumber($number)) {
+    if (($number != 2) && (($number % 2 == 0) || ($number < 2))) {
         return false;
     }
 
-    $d = 3; //Для перебора только нечетных чисел
+    $devider = 3;
+    $value = sqrt($number);
 
-    while (($d * $d <= $number) and ($number % $d != 0)) {
-        $d += 2;
+    while (($devider <= $value) and ($number % $devider != 0)) {
+        $devider += 2;
     }
            
-    return  ($d * $d) > $number;
-}
-
-function isNotSuitableNumber($number)
-{
-    return ($number != 2) && (($number % 2 == 0) || ($number < 2));
+    return  $devider > $value;
 }

@@ -14,9 +14,8 @@ function run()
     playGame(GAME_TITLE, $tasksList);
 }
 
-function chooseEvenNumber()
+function generateEvenNumber()
 {
-    //Для усложнения задачи, функция возвращает только четные числа!
     do {
         $a = rand(0, 99);
     } while ($a % 2 === 1);
